@@ -1,9 +1,9 @@
-import {ApplicationConfig, TodoListApplication} from './application';
+import {ApplicationConfig, TodoAppApplication} from './application';
 
 export * from './application';
 
 export async function main(options: ApplicationConfig = {}) {
-  const app = new TodoListApplication(options);
+  const app = new TodoAppApplication(options);
   await app.boot();
   await app.start();
 

@@ -1,16 +1,16 @@
 import {inject} from '@loopback/core';
 import {DefaultCrudRepository} from '@loopback/repository';
 import {DbDataSource} from '../datasources';
-import {Todo, TodoRelations} from '../models';
+import {TodoModel, TodoModelRelations} from '../models';
 
-export class TodoRepository extends DefaultCrudRepository<
-  Todo,
-  typeof Todo.prototype.id,
-  TodoRelations
+export class TodoModelRepository extends DefaultCrudRepository<
+  TodoModel,
+  typeof TodoModel.prototype.id,
+  TodoModelRelations
 > {
   constructor(
     @inject('datasources.db') dataSource: DbDataSource,
   ) {
-    super(Todo, dataSource);
+    super(TodoModel, dataSource);
   }
 }
